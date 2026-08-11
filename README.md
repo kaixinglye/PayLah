@@ -1,2 +1,0 @@
-# PayLah
-Split bills 
