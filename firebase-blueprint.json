@@ -1,0 +1,57 @@
+{
+  "collections": {
+    "profiles": {
+      "fields": {
+        "name": "string",
+        "handle": "string",
+        "defaultCurrency": "string",
+        "paymentQrUrl": "string|null",
+        "createdAt": "timestamp",
+        "updatedAt": "timestamp"
+      }
+    },
+    "groups": {
+      "fields": {
+        "name": "string",
+        "emoji": "string",
+        "adminId": "string",
+        "memberIds": "string[]",
+        "members": "Person[]",
+        "totalSplits": "number",
+        "createdAt": "timestamp"
+      }
+    },
+    "history": {
+      "fields": {
+        "code": "string",
+        "name": "string",
+        "venue": "string",
+        "hostId": "string",
+        "participantIds": "string[]",
+        "people": "Person[]",
+        "items": "BillItem[]",
+        "currency": "string",
+        "tax": "number",
+        "serviceCharge": "number",
+        "discount": "number",
+        "status": "active|settled",
+        "createdAt": "timestamp"
+      },
+      "indexes": [
+        ["participantIds", "array-contains", "createdAt", "desc"],
+        ["participantIds", "array-contains", "status", "asc", "createdAt", "desc"]
+      ]
+    },
+    "notifications": {
+      "fields": {
+        "profileId": "string",
+        "title": "string",
+        "message": "string",
+        "type": "join|payment|system",
+        "tableId": "string|null",
+        "read": "boolean",
+        "createdAt": "timestamp"
+      }
+    }
+  }
+}

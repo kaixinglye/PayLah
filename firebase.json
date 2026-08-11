@@ -1,0 +1,36 @@
+{
+  "functions": {
+    "source": "functions"
+  },
+  "firestore": [
+    {
+      "database": "ai-studio-2dfe500f-5b93-4dd5-8f91-ed2f1378f950",
+      "rules": "firestore.rules",
+      "indexes": "firestore.indexes.json"
+    }
+  ],
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "hosting": {
+    "public": "dist/client",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/api/ocr/cloud-vision",
+        "function": {
+          "functionId": "ocr",
+          "region": "asia-southeast1"
+        }
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

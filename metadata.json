@@ -1,0 +1,18 @@
+{
+  "name": "PayLah",
+  "description": "AI-powered receipt scanning, real-time bill splitting and shared expense tracking.",
+  "version": "1.0.0",
+  "capabilities": [
+    "google-cloud-vision-receipt-ocr",
+    "item-claiming",
+    "shared-tables",
+    "split-history",
+    "dining-groups",
+    "payment-qr",
+    "notifications"
+  ],
+  "runtime": {
+    "node": ">=18",
+    "port": 3000
+  }
+}
